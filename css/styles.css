@@ -462,8 +462,12 @@
         color:#AFB1B8;
     }
 
-    .clients-item {
-         width: 170px;
+    .clients-item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .link-company {
+        width: 170px;
         height: 92px;
         color:#AFB1B8;
         border-radius: 4px; 
@@ -471,42 +475,29 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 30px;
         border: 1px solid #AFB1B8;
         border-radius: 4px;
         transition-property: border-color;
         transition-duration: 250ms;
         transition-timing-function: var(--timing-function);
-    } */
-
+    }
     .clients-icon {
         color:#AFB1B8;
+    }
+
+    .link-company:hover,
+    .link-company:focus {
+        color: var(--accent-color);
+        background-color: var(--primary-bg-color);
+        border: 1px solid #2196F3;
+        border-radius: 4px;
     }
 
 
     .clients-svg {
         fill: currentColor;
-        transition-property: color;
-        transition-duration: 250ms;
-        transition-timing-function: var(--timing-function);
-        transition-property: background-color;
-        transition-duration: 250ms;
-        transition-timing-function: var(--timing-function);
     }
     
-
-    .clients-item:hover,
-    .clients-item:focus {
-    border: 1px solid #2196F3;
-    border-radius: 4px; 
-    }
-    
-    .clients-svg:hover,
-    .clients-svg:focus {
-    color: var(--accent-color);
-    background-color: var(--primary-bg-color);
-    }
-
      
     /* Підвал сторінки */
 
@@ -777,24 +768,31 @@
         color: var(--primary-text-color);
         padding: 12px;
         padding-left: 42px;
+        margin: 0;
+        background-color: transparent;
         border: 1px solid rgba(33, 33, 33, 0.2);
         border-radius: 4px;
-        outline-color: var(--accent-color);
         transition: color 250ms var(--timing-function),
-        border 250ms var(--timing-function);
+        border-color 250ms var(--timing-function);
     }
      
     .modal-icon {
         position: absolute;
         top: 50%;
         left: 12px;
-        display: block;
         fill: currentColor;
         transition: fill 250ms var(--timing-function);
     }
       
-    .modal-input .modal-icon:focus-within  {
-        fill: var(--accent-color);
+
+    .modal-input:hover,
+    .modal-input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+    .modal-input:hover + .modal-icon ,
+    .modal-input:focus + .modal-icon {
+    fill: var(--accent-color);
     }
   
     .comment {
